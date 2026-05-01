@@ -6,4 +6,4 @@ var address = "Dhaka Basundhara";
 var isritch = false;
 
 console.log(name);
-console.log(typeof isritch);
+console.log(typeof isritch); 
