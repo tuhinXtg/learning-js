@@ -9,9 +9,17 @@
     <h1 onclick="console.log('I am clicked')">Dom special event</h1>
     <button onclick="console.log(7)">click me</button>
     <button onclick="console.log(57)">Another button</button>
-
-
+    <button onclick="document.body.style.backgroundColor='Yellow'">Make Yellow</button>
+    <button onclick="makeRed()">Make Red</button>
+    <button id="make-blue">Make blue</button>
 
     <script src="js/events.js"></script>
+    <script>
+        const makebluebtn = document.getElementById('make-blue');
+        makebluebtn.onclick = makeble;
+        function makeble(){
+            document.body.style.backgroundColor = 'blue';
+        }
+    </script>
 </body>
 </html>
