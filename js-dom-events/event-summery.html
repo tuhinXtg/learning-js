@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM summery</title>
+</head>
+<body>
+    <h1>Final ODM event handler</h1>
+    <h3 id="handler-status">Default text </h3>
+    <p id="inp-xtt">Default Input Text</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+    <br>
+    <br>
+    <button onclick="handleOnclick()">Handle Event byAdd onClick Function</button>
+    <button id="event-listener">handle event by addEventListener</button>
+
+
+    <script>
+        function handleOnclick(){
+            const handlerstatus = document.getElementById('handler-status');
+            handlerstatus.innerText = 'Handled by function attached onClicked attribute'
+        }
+
+        // option 2
+        const button2 = document.getElementById('event-listener');
+        button2.addEventListener('click', function(){
+            const secondText = document.getElementById('handler-status');
+            secondText.innerText = 'Yesss, I made it';
+        })
+        // option 2 recap
+        document.getElementById('btn-update').addEventListener('click', function(){
+            const inputfield = document.getElementById('input-field');
+            const inoutxt = inputfield.value
+            const p = document.getElementById('inp-xtt');
+            p.innerText = inoutxt;
+            inputfield.value = ' ';
+        })
+    </script>
+</body>
+</html>
