@@ -12,22 +12,30 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to my DOM</h1>
-    </header>
     <main>
-        <h1>My awesome DOM de baba</h1>
-        <ul>
-            <li>jalali</li>
-            <li>shafayet</li>
-            <li>nazmul</li>
-        </ul>
+        <section>
+            <h1>My awesome DOM de baba</h1>
+            <ul>
+                <li>jalali</li>
+                <li>shafayet</li>
+                <li>nazmul</li>
+            </ul>
+        </section>
+        <section class="food-container">
+            <h1>Welcome to my food container</h1>
+            <ul>
+                <li>banana</li>
+                <li>apple</li>
+                <li>mango</li>
+            </ul>
+        </section>
     </main>
+    <script src="js/style.js"></script>
     <script src="js/dom.js"></script>
     <script>
         const headings = document.getElementsByTagName('h1');
         for(const h1 of headings){
-            console.log(h1.innerText)
+            // console.log(h1.inn)
         }
     </script>
 </body>
