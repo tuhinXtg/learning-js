@@ -25,7 +25,10 @@
     </main>
     <script src="js/dom.js"></script>
     <script>
-        console.log('Adding the js file')
+        const headings = document.getElementsByTagName('h1');
+        for(const h1 of headings){
+            console.log(h1.innerText)
+        }
     </script>
 </body>
 </html>
