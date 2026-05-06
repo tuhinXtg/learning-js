@@ -12,14 +12,16 @@
     <button onclick="document.body.style.backgroundColor='Yellow'">Make Yellow</button>
     <button onclick="makeRed()">Make Red</button>
     <button id="make-blue">Make blue</button>
+    <button id="make-green">make green</button>
+    <button id="make-golden">make golden</button>
 
+    <!-- Option 4 -->
+    <button id="make-pink">Make Pink</button>
     <script src="js/events.js"></script>
     <script>
-        const makebluebtn = document.getElementById('make-blue');
-        makebluebtn.onclick = makeble;
-        function makeble(){
-            document.body.style.backgroundColor = 'blue';
-        }
+        document.getElementById('make-golden').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'goldenrod'
+        })
     </script>
 </body>
 </html>
