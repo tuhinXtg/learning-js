@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Button</title>
+</head>
+<body>
+    <h1 id="heading">My new property</h1>
+    <input id="inp-field" type="text" placeholder="Please type Delete">
+    <button id="dlt-btn" disabled>Delete</button>
+
+
+    <script>
+        document.getElementById('inp-field').addEventListener('keyup', function(event){
+            const deletebutton = document.getElementById('dlt-btn'); 
+            const text = event.target.value;
+            if(text == 'delete'){
+                deletebutton.removeAttribute('disabled')
+            }else{
+                deletebutton.setAttribute('disabled', true)
+            }
+        })
+
+        document.getElementById('dlt-btn').addEventListener('click', function(){
+            const headText = document.getElementById('heading');
+            headText.style.display = 'none';
+        })
+    </script>
+</body>
+</html>
