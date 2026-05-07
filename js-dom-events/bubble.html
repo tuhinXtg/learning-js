@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bubble Event </title>
+    <style>
+        ul, body, section{
+            border: 2px solid tomato;
+        }
+        body{
+            border: 2px solid rgb(0, 0, 0);
+        }
+        section{
+            border: 2px solid blue;
+        }
+        #item-2{
+            border: 2px solid aquamarine;
+        }
+    </style>
 </head>
-<body>
+<body id="body">
     <h1>Exploring Event Bubble</h1>
-    <section>
-        <ul>
+    <section id="list-container">
+        <ul id="list-ul">
             <li id="item-1">Lorem, ipsum.</li>
             <li id="item-2">Totam, exercitationem.</li>
             <li id="item-3">Doloremque, fugiat!</li>
@@ -17,5 +31,23 @@
             <li id="item-6">Quisquam, dolore.</li>
         </ul>
     </section>
+
+
+    <script>
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2');
+            event.stopPropagation();
+        })
+
+        document.getElementById('list-ul').addEventListener('click', function(){
+            console.log('ul clicked')
+        })
+        document.getElementById('list-container').addEventListener('click', function(){
+            console.log('section Container clicked')
+        })
+        document.getElementById('body').addEventListener('click', function(){
+            console.log('Body  clicked')
+        })
+    </script>
 </body>
 </html>
