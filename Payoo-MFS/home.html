@@ -25,9 +25,10 @@
                 </div>
                 <div class="divider"></div>
                 <!-- user action button -->
-                <div>
+                <div class="flex flex-col gap-1">
                     <button id="main-addmoney-btn" class="btn btn-lg">Add Money</button>
                     <button id="main-cashout-btn" class="btn btn-lg">Cash Out</button>
+                    <button id="main-transaction-btn" class="btn btn-lg">transaction</button>
                 </div>
                 <div class="divider"></div>
                 <!-- add money form start -->
@@ -54,13 +55,24 @@
                     <button id="cash-out-btn" class="btn bg-[#0874F2] text-white mt-4">Cash Out</button>
                 </fieldset>
                 <!-- cash out end  -->
+
+                <!-- transaction start -->
+                 <div id="Transaction-form" class="hidden text-center">
+                    <h2 class="text-center text-2xl font-bold">Transaction History</h2>
+                    <div id="transaction-container" class="text-center">
+
+                    </div>
+                 </div>
+                <!-- transaction end -->
             </div>
         </div>
         </div>
     </main>
 
-    <script src="js/librabies.js"></script>
-    <script src="js/addmoney.js"></script>
+    <script src="js/utilities2.js"></script>
+    <script src="js/addmoney2.js"></script>
+    <script src="js/cashout2.js"></script>
+    <script src="js/features.js"></script>
 </body>
 
 </html>
