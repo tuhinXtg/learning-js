@@ -16,7 +16,8 @@ document.getElementById('add-money-btn')
 
             const new_balance = add_money_number + balance_number;
 
-            document.getElementById('acc-balance').innerText = new_balance;
+            document.getElementById('acc-balance')
+                .innerText = new_balance;
         } else {
             alert('Failed to add money. Tyr again please.')
         }
