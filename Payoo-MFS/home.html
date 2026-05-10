@@ -31,7 +31,7 @@
                 </div>
                 <div class="divider"></div>
                 <!-- add money form start -->
-                <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border shadow-2xl p-12">
+                <fieldset class="hidden fieldset bg-base-200 border-base-300 rounded-box w-xs border shadow-2xl p-12">
                     <label class="label font-bold text-black">Amount</label>
                     <input id="amount-input" type="text" autocomplete="off" class="input px-2"
                         placeholder="Enter your Amount" />
@@ -42,15 +42,26 @@
                     <button id="add-money-btn" class="btn bg-[#0874F2] text-white mt-4">Add Money</button>
                 </fieldset>
                 <!-- add money form end -->
+                <!-- cash out start  -->
+                <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border shadow-2xl p-12">
+                    <label class="label font-bold text-black">cash Out Amount</label>
+                    <input id="cashout-amount-input" type="text" autocomplete="off" class="input px-2"
+                        placeholder="Enter your Amount" />
+
+                    <label class="label font-bold text-black">Pin</label>
+                    <input id="cashout-pin-number" type="password" maxlength="4" class="input px-2"
+                        placeholder="Enter 4 Digit Pin" />
+                    <button id="cash-out-btn" class="btn bg-[#0874F2] text-white mt-4">Cash Out</button>
+                </fieldset>
+                <!-- cash out end  -->
             </div>
         </div>
         </div>
     </main>
 
 
-    <script src="js/home.js">
-
-    </script>
+    <script src="js/home.js"></script>
+    <script src="js/cashout.js"></script>
 </body>
 
 </html>
