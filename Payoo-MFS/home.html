@@ -26,12 +26,12 @@
                 <div class="divider"></div>
                 <!-- user action button -->
                 <div>
-                    <button class="btn btn-lg">Add Money</button>
-                    <button class="btn btn-lg">Cash Out</button>
+                    <button id="main-addmoney-btn" class="btn btn-lg">Add Money</button>
+                    <button id="main-cashout-btn" class="btn btn-lg">Cash Out</button>
                 </div>
                 <div class="divider"></div>
                 <!-- add money form start -->
-                <fieldset class="hidden fieldset bg-base-200 border-base-300 rounded-box w-xs border shadow-2xl p-12">
+                <fieldset id="add-money-form" class=" fieldset bg-base-200 border-base-300 rounded-box w-xs border shadow-2xl p-12">
                     <label class="label font-bold text-black">Amount</label>
                     <input id="amount-input" type="text" autocomplete="off" class="input px-2"
                         placeholder="Enter your Amount" />
@@ -43,7 +43,7 @@
                 </fieldset>
                 <!-- add money form end -->
                 <!-- cash out start  -->
-                <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border shadow-2xl p-12">
+                <fieldset id="cash-out-form" class="hidden fieldset bg-base-200 border-base-300 rounded-box w-xs border shadow-2xl p-12">
                     <label class="label font-bold text-black">cash Out Amount</label>
                     <input id="cashout-amount-input" type="text" autocomplete="off" class="input px-2"
                         placeholder="Enter your Amount" />
@@ -62,6 +62,7 @@
 
     <script src="js/home.js"></script>
     <script src="js/cashout.js"></script>
+    <script src="js/feaatures.js"></script>
 </body>
 
 </html>
