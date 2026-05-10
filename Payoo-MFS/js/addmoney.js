@@ -5,8 +5,8 @@ document.getElementById('add-money-btn')
     .addEventListener('click', function (event) {
         // prevent page reload after submit...........
         event.preventDefault();
-        const get_amount = document.getElementById('amount-input').value;
-        const pin_number = document.getElementById('pin-number').value;
+        const get_amount = getInputValue('amount-input');
+        const pin_number = getInputValue('pin-number');
 
         if (pin_number == '111') {
             const balance = document.getElementById('acc-balance').innerText;
