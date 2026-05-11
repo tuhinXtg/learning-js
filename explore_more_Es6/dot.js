@@ -1,6 +1,7 @@
 const person = {
     name: 'kodom ali',
-    job ='HR'
+    job: 'HR'
 }
 
 console.log(person.job)
+console.log(person['job'])
