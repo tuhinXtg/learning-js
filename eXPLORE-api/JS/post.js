@@ -4,9 +4,9 @@ function loadPost() {
         .then(data => displayPost(data))
 }
 
-function displayPost(data){
+function displayPost(data) {
     const post_container = document.getElementById('Posts-container');
-    for(const user of data){
+    for (const user of data) {
         const post_div = document.createElement('div');
         post_div.innerHTML = `
             <h4>user- ${user.userId}</h4>
@@ -19,3 +19,4 @@ function displayPost(data){
 }
 
 loadPost();
+
