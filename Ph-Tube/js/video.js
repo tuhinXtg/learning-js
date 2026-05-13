@@ -1,4 +1,4 @@
-function getTimeString(time){
+function getTimeString(time) {
     // converting in hour''
     const hour = parseInt(time / 3600);
     const remainingMinute = time % 3600;
@@ -11,6 +11,15 @@ function getTimeString(time){
 
 
 // button work start
+
+const loadCategoryVideos = (id) => {
+    // alert(id);
+    fetch(`https://openapi.programming-hero.com/api/phero-tube/category/${id}`)
+        .then(res => res.json())
+        .then(data => displayVideos(data.category))
+        .catch(err => console.log(err))
+}
+
 const loadCategories = () => {
     fetch('https://openapi.programming-hero.com/api/phero-tube/categories')
         .then(res => res.json())
@@ -23,10 +32,13 @@ const displayCategories = (data) => {
     data.forEach(element => {
         console.log(element)
         // creating button for each category
-        const button = document.createElement('button');
-        button.classList = "btn bg-slate-300 my-4 p-4";
-        button.innerText = element.category;
-        category_container.appendChild(button);
+        const button_container = document.createElement('div');
+        button_container.innerHTML = `
+            <button onclick="loadCategoryVideos(${element.category_id})" class="btn bg-slate-300 px-3 mt-8">
+                ${element.category}
+            </button>
+        `
+        category_container.appendChild(button_container);
     });
 }
 
@@ -43,7 +55,17 @@ const loadVideos = () => {
 
 
 const displayVideos = (videos) => {
-    const video_container = document.getElementById('videos')
+    const video_container = document.getElementById('videos');
+    video_container.innerHTML = "";
+
+    if (videos.length == 0) {
+        video_container.innerHTML = `
+        <div class="col-span-full min-h-[300px] w-full flex items-center justify-center">
+            <img src="assets/Icon.png" />
+        </div>
+    `;
+        return;
+    }
     videos.forEach(element => {
         const card = document.createElement('div');
         card.classList = "card bg-base-100 shadow-sm"
@@ -52,9 +74,8 @@ const displayVideos = (videos) => {
                 <img
                 src=${element.thumbnail}
                 alt="videos" class="h-full w-full object-cover" />
-                ${
-                    element.others.posted_date ? `<span class="absolute right-2 bottom-2 bg-black text-white">${getTimeString(element.others.posted_date)}</span>` : ""
-                }
+                ${element.others.posted_date ? `<span class="absolute right-2 bottom-2 bg-black text-white">${getTimeString(element.others.posted_date)}</span>` : ""
+            }
             </figure>
             <div class="px-0 py-4 flex flex-row justify-between">
                 <div class = "p-2">
