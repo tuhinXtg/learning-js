@@ -8,7 +8,13 @@ function getTimeString(time) {
 
     return `${hour}:${minute}:${second}`
 }
-
+const remove_active_class = () => {
+    const buttons = document.getElementsByClassName('category-btn')
+    console.log(buttons)
+    for(let btn of buttons){
+        btn.classList.remove('active');
+    }
+}
 
 // button work start
 
@@ -16,7 +22,13 @@ const loadCategoryVideos = (id) => {
     // alert(id);
     fetch(`https://openapi.programming-hero.com/api/phero-tube/category/${id}`)
         .then(res => res.json())
-        .then(data => displayVideos(data.category))
+        .then(data => {
+            remove_active_class();
+            const activeBtn = document.getElementById(`btn-${id}`)
+            activeBtn.classList.add('active')
+            console.log(activeBtn)
+            displayVideos(data.category)
+        })
         .catch(err => console.log(err))
 }
 
@@ -34,7 +46,7 @@ const displayCategories = (data) => {
         // creating button for each category
         const button_container = document.createElement('div');
         button_container.innerHTML = `
-            <button onclick="loadCategoryVideos(${element.category_id})" class="btn bg-slate-300 px-3 mt-8">
+            <button onclick="loadCategoryVideos(${element.category_id})" id="btn-${element.category_id}" class="btn bg-slate-300 px-3 mt-8 category-btn">
                 ${element.category}
             </button>
         `
@@ -60,8 +72,9 @@ const displayVideos = (videos) => {
 
     if (videos.length == 0) {
         video_container.innerHTML = `
-        <div class="col-span-full min-h-[300px] w-full flex items-center justify-center">
+        <div class="col-span-full min-h-[300px] w-full flex flex-col items-center justify-center">
             <img src="assets/Icon.png" />
+            <p class="mt-8 font-bold text-2xl">No content in this category</p>
         </div>
     `;
         return;
