@@ -3,19 +3,23 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import Todo from './todo'
 
 function App() {
 
   return (
     <>
       <h1>Vite + React</h1>
-      <Person></Person>
+      <Todo task="Learn react" isdone={true}></Todo>
+      <Todo task="Explore core react" isdone={false}></Todo>
+      <Todo task="Try JSX" isdone={true}></Todo>
+      {/* <Person></Person>
       <Person></Person>
       <Person></Person>
       <Student grade="7" score="95"></Student>
       <Student grade="5" score="90"></Student>
       <Student grade="11" score="80"></Student>
-      <Developer></Developer>
+      <Developer></Developer> */}
     </>
   )
 }
@@ -34,7 +38,7 @@ function Person() {
 
 
 // const {grade, score} = {grade: '7', score: '95'};
-function Student({grade=1, score=0}) {
+function Student({ grade = 1, score = 0 }) {
 
   return (
     <div className='student'>
@@ -45,7 +49,7 @@ function Student({grade=1, score=0}) {
   )
 }
 
-function Developer(){
+function Developer() {
   const developerstyle = {
     margin: '20px',
     padding: '20px',
