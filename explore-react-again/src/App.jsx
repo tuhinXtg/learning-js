@@ -9,12 +9,20 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
+      <Device></Device>
+      <Device></Device>
+      <Device></Device>
       <Person></Person>
       <Person></Person>
       <Person></Person>
       <Student></Student>
+      <Developer></Developer>
     </>
   )
+}
+
+function Device(){
+  return <h2>This Device: Laptop</h2>
 }
 
 function Person() {
@@ -31,11 +39,26 @@ function Person() {
 function Student() {
 
   return (
-    <>
+    <div className='student'>
       <h3>This is a Student</h3>
       <p>Name: </p>
       <p>age: </p>
-    </>
+    </div>
+  )
+}
+
+function Developer(){
+  const developerstyle = {
+    margin: '20px',
+    padding: '20px',
+    border: '3px solid purple',
+    borderRadius: '10px'
+  }
+  return (
+    <div style={developerstyle}>
+      <h5>Devs Deps</h5>
+      <p>Coding: </p>
+    </div>
   )
 }
 
