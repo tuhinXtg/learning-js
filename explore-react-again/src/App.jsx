@@ -1,18 +1,36 @@
-import { useState } from 'react'
+import { act, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Todo from './todo'
+import Actor from './actor'
+import Singer from './Singer'
 
 function App() {
+  const actors = ['Sakib', 'Raj', 'Rafim', 'Rubel']
 
+  const singers = [
+    {id: 1, name:'Dr. Mahbubur Rahman', age: 56},
+    {id: 2, name:'Dr. Habibur Rahman', age: 46},
+    {id: 3, name:'Dr. Sgubro Dev', age: 67},
+    {id: 4, name:'Pritom Hasan', age: 28}
+  ]
   return (
     <>
       <h1>Vite + React</h1>
-      <Todo task="Learn react" isdone={true}></Todo>
+
+      {
+        singers.map(singer => <Singer singer={singer}></Singer>)
+      }
+
+      <Actor name='Tuhin'></Actor>
+      {
+        actors.map(actor =><Actor name={actor}></Actor>)
+      }
+      {/* <Todo task="Learn react" isdone={true}></Todo>
       <Todo task="Explore core react" isdone={false}></Todo>
-      <Todo task="Try JSX" isdone={true}></Todo>
+      <Todo task="Try JSX" isdone={true}></Todo> */}
       {/* <Person></Person>
       <Person></Person>
       <Person></Person>
