@@ -9,21 +9,17 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
-      <Device></Device>
-      <Device></Device>
-      <Device></Device>
       <Person></Person>
       <Person></Person>
       <Person></Person>
-      <Student></Student>
+      <Student grade="7" score="95"></Student>
+      <Student grade="5" score="90"></Student>
+      <Student grade="11" score="80"></Student>
       <Developer></Developer>
     </>
   )
 }
 
-function Device(){
-  return <h2>This Device: Laptop</h2>
-}
 
 function Person() {
 
@@ -36,13 +32,15 @@ function Person() {
   )
 }
 
-function Student() {
+
+// const {grade, score} = {grade: '7', score: '95'};
+function Student({grade=1, score=0}) {
 
   return (
     <div className='student'>
       <h3>This is a Student</h3>
-      <p>Name: </p>
-      <p>age: </p>
+      <p>Name: {grade}</p>
+      <p>Score: {score}</p>
     </div>
   )
 }
