@@ -1,4 +1,5 @@
 import './App.css'
+import Counter from './counter'
 
 function App() {
 
@@ -12,9 +13,10 @@ function App() {
   return (
     <div id='center'>
       <h3>React core concept part 2</h3>
+      <Counter></Counter>
       <button onClick={handleClick}>Click me</button>
       <button onClick={handleClick2
-         
+
       }>Click 2</button>
     </div>
   )
