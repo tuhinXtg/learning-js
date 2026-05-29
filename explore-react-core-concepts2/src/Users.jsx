@@ -1,21 +1,15 @@
 import { useEffect, useState } from "react"
 
 export default function Users(){
-    const [users, setUsers] = useState([]);
-
-    useEffect(()=>{
+    const [Users, setUsers] = useState([])
+    useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res=> res.json())
-        .then(data => console.log(data))
-    }, [])
-
-    return (
+        .then(res => res.json())
+        .then(data => setUsers(data))
+    },[])
+    return(
         <div>
-
+            <h3>Users : {Users.length}</h3>
         </div>
     )
 }
-
-
-// declare a state to hold the data 
-// UseEffect with callback and dependency array 
