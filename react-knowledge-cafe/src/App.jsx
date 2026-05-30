@@ -1,14 +1,13 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from './assets/vite.svg'
-// import heroImg from './assets/hero.png'
 import './App.css'
+import Blogs from './components/Blogs/blogs'
+import Header from './components/header/header'
 
 function App() {
 
   return (
     <div>
-      <h1 className='text-xl bg-red-300'>Knowledge cafe</h1>
+      <Header></Header>
+      <Blogs></Blogs>
     </div>
   )
 }
