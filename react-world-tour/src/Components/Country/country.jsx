@@ -1,9 +1,9 @@
 const Country = ({country}) => {
-    const {name, flags} = country;
+    const {name} = country;
     return (
         <div className="country">
-            <h3>name : {name.common}</h3>
-            <img src={flags.png} alt="" />
+            <h3>Name : {name.common}</h3>
+            <img src={country.flags.png} alt="" />
         </div>
     );
 };
