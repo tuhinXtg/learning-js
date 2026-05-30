@@ -1,6 +1,5 @@
-import React from 'react';
 import './Sunglass.css'
-import Watch from '../Watch/Watch';
+import Watch from '../Watch/Watches';
 
 
 const Sunglass = () => {
