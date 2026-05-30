@@ -4,4 +4,9 @@
     margin: 15px;
     border-radius: 10px;
     text-align: center;
+    line-height: 40px;
+}
+.visited{
+    background-color: bisque;
+    color: black;
 }
